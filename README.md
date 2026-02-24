@@ -1,16 +1,16 @@
 # Williams Design Functions for Sensory Evaluation
 
-Two R functions for generating balanced Williams designs for sensory or consumer product evaluation studies. A Williams design ensures each product appears equally often in each position, controlling for carry-over effects across participants.
+Two R functions for generating balanced Williams designs for sensory or consumer product evaluation studies. A Williams design ensures each product appears equally often in each position, balancing order and carry-over effects across participants.
 
 ---
 
 ## Functions
 
 ### `make_williams_products()`
-Generates a participant-level product sequence design with HTML-rendered product descriptions. The output is intended for use in survey tools (e.g. Qualtrics) where product names and descriptions are displayed to participants.
+Generates a participant-level product sequence design with HTML-rendered product descriptions. The product_id values you provide should match the image filenames stored in your GitHub repository. The design output includes these filenames so that AUSenseR can use them to construct a direct link to the corresponding GitHub-hosted image, which is then rendered for the participant during the survey.
 
 ### `make_williams_blindingcodes()`
-Generates a participant-level blinding code sequence design. The output maps each participant to a sequence of numeric blinding codes, intended for use in lab settings where samples are coded and served blind.
+Generates a participant-level blinding code sequence design. The output maps each participant to a sequence of numeric blinding codes, intended for use in studies where samples are coded and served blind.
 
 ---
 
@@ -27,7 +27,7 @@ install.packages(c("crossdes", "tibble", "dplyr", "tidyr", "htmltools"))
 Both functions run with zero arguments using built-in defaults:
 
 ```r
-make_williams_products()      # writes wd.csv with product sequences + HTML descriptions
+make_williams_products()      # writes wd.csv with product sequences + HTML descriptions + filenames for images
 make_williams_blindingcodes() # writes wd.csv with blinding code sequences
 ```
 
