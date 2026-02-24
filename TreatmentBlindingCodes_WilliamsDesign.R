@@ -1,4 +1,4 @@
-make_williams_df <- function(blinding_codes,
+make_williams_products <- function(blinding_codes,
                              n_ids,
                              id_name = "ID") {
   if (!requireNamespace("crossdes", quietly = TRUE)) {
@@ -69,11 +69,12 @@ make_williams_df <- function(blinding_codes,
 treatment_names <- c(859, 283, 405)
 
 # n_ids = number of treatment sets in the balanced design
-wd_df <- make_williams_df(
+wd_df <- make_williams_products(
   blinding_codes = treatment_names,
   n_ids = 300
 )
 
 # Write the design file and upload to the Github repository
+
 
 write.csv(wd_df, "wd.csv")
