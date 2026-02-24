@@ -1,4 +1,4 @@
-make_williams_products <- function(blinding_codes,
+make_williams_blindingCodes <- function(blinding_codes,
                              n_ids,
                              id_name = "ID") {
   if (!requireNamespace("crossdes", quietly = TRUE)) {
@@ -78,3 +78,4 @@ wd_df <- make_williams_products(
 
 
 write.csv(wd_df, "wd.csv")
+
